@@ -13,20 +13,42 @@ function App() {
 
       <h2 style={{ fontSize: "30px", color: "black" }}>{count}</h2>
       <div>
-        <button style={{ marginLeft: 5, background: "green", padding: "10px" }} onClick={() => setcount(count + step)}>Increment</button>
-        <button style={{ marginLeft: 5, background: "red", margin: "8px", padding: "10px" }} onClick={() => setcount(count - step)}>Decrement</button>
-        <button style={{ marginLeft: 5, background: "blue", padding: "10px" }} onClick={on}>Reset</button>
+        <button style={{ marginLeft: 5, background: "green", padding: "10px" }} onClick={inc}>Increment</button>
+        <button style={{ marginLeft: 5, background: "red", margin: "8px", padding: "10px" }} onClick={dec}>Decrement</button>
+        <button style={{ marginLeft: 5, background: "blue", padding: "10px" }} onClick={reset}>Reset</button>
       </div>  </div>
   );
-  function on() {
-    alert("starting from zero");
+
+
+  function inc(){
+        setcount(count+step);
+        
+
+  }
+
+
+  function dec(){
+    setcount(count-step);
+    if(count<=0){
+      setcount(0);
+    }
+  
+    
+  }
+
+
+  function reset() {
+    alert("Starting from Beginning");
     setcount(0);
 
   }
+
+
   function f() {
     let e = document.getElementById("o").value
     setstep(Number(e))
   }
+  
 }
 
 export default App;
